@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MILEI FUTBOLERO ⚽</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* ESTILOS GENERALES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER - TÍTULO MILEI */
+        .milei-header {
+            background: linear-gradient(to right, #0d6efd, #198754);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .milei-header::before {
+            content: "⚽";
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.1;
+            right: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .milei-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .milei-subtitle {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .app-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px auto;
+            max-width: 800px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .info-line {
+            margin: 8px 0;
+            font-size: 1rem;
+        }
+
+        .whatsapp-link {
+            color: #25D366;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px 0;
+        }
+
+        .whatsapp-link:hover {
+            text-decoration: underline;
+            color: #1da851;
+        }
+
+        .curiosity-note {
+            font-style: italic;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* CONTROLES */
+        .controls {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #495057;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        input, select, button {
+            padding: 12px 15px;
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            align-items: flex-end;
+        }
+
+        .btn {
+            background: #0d6efd;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex: 1;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-success {
+            background: #198754;
+        }
+
+        .btn-warning {
+            background: #ffc107;
+            color: #000;
+        }
+
+        /* ESTADÍSTICAS */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card.live {
+            border-top: 5px solid #dc3545;
+        }
+
+        .stat-card.total {
+            border-top: 5px solid #0d6efd;
+        }
+
+        .stat-card.leagues {
+            border-top: 5px solid #198754;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #212529;
+            margin: 10px 0;
+        }
+
+        .stat-label {
+            color: #6c757d;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* PARTIDOS */
+        .matches-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .match-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .match-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .match-card.live {
+            border-left: 5px solid #dc3545;
+            animation: live-pulse 2s infinite;
+        }
+
+        @keyframes live-pulse {
+            0% { box-shadow: 0 10px 30px rgba(220, 53, 69, 0.1); }
+            50% { box-shadow: 0 10px 30px rgba(220, 53, 69, 0.3); }
+            100% { box-shadow: 0 10px 30px rgba(220, 53, 69, 0.1); }
+        }
+
+        .match-header {
+            background: #f8f9fa;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .league-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .league-logo {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .league-name {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .match-status {
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status-live {
+            background: #dc3545;
+            color: white;
+        }
+
+        .status-finished {
+            background: #198754;
+            color: white;
+        }
+
+        .status-scheduled {
+            background: #0d6efd;
+            color: white;
+        }
+
+        .match-content {
+            padding: 30px;
+        }
+
+        .teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .team {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40%;
+        }
+
+        .team-logo {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .team-name {
+            font-weight: 600;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .vs {
+            font-size: 1.2rem;
+            color: #6c757d;
+            font-weight: 700;
+        }
+
+        .score {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #212529;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .match-details {
+            display: flex;
+            justify-content: space-between;
+            color: #6c757d;
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid #dee2e6;
+        }
+
+        /* LOADING Y ERRORES */
+        .loading {
+            text-align: center;
+            padding: 60px;
+            grid-column: 1 / -1;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #0d6efd;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: flex;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #212529;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .api-info {
+            text-align: left;
+        }
+
+        .api-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .status-online {
+            color: #198754;
+        }
+
+        .status-offline {
+            color: #dc3545;
+        }
+
+        .developer-info {
+            text-align: right;
+            font-size: 0.9rem;
+            color: #adb5bd;
+        }
+
+        .contact-info {
+            margin-top: 10px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        .whatsapp-contact {
+            color: #25D366;
+            font-weight: bold;
+        }
+
+        .free-app {
+            color: #ffc107;
+            font-weight: bold;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .matches-container {
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .milei-title {
+                font-size: 2.5rem;
+            }
+            
+            .controls {
+                grid-template-columns: 1fr;
+            }
+            
+            .matches-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .milei-title {
+                font-size: 2rem;
+            }
+            
+            .match-card {
+                margin: 0 10px;
+            }
+            
+            .score {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER MILEI -->
+        <header class="milei-header">
+            <h1 class="milei-title">MILEI FUTBOLERO</h1>
+            <p class="milei-subtitle">Seguí TODOS los partidos del mundo en vivo</p>
+            
+            <div class="app-info">
+                <div class="info-line">La Api key se termina de configurar cuando tu número sigue al canal de Whatsapp Milei Futbolero</div>
+                <div class="info-line">
+                    <a href="https://whatsapp.com/channel/0029VagfWy8AjPXFMgBQdp0n" target="_blank" class="whatsapp-link">
+                             https://whatsapp.com/channel/0029VagfWy8AjPXFMgBQdp0n
+                    </a>
+                </div>
+                <div class="info-line">Si no sigues al canal, funcionará limitadamente para pocas consultas</div>
+                <div class="curiosity-note">Para los curiosos : ver en COMPETENCIAS que Liga figura</div>
+				<div class="curiosity-note">SI SEÑOR! La LRFRC</div>
+            </div>
+        </header>
+
+        <!-- CONTROLES -->
+        <div class="controls">
+            <div class="control-group">
+                <label for="fecha"><i class="fas fa-calendar-alt"></i> FECHA</label>
+                <input type="date" id="fecha">
+            </div>
+            
+            <div class="control-group">
+                <label for="liga"><i class="fas fa-trophy"></i> COMPETICIÓN</label>
+                <select id="liga">
+                    <option value="">Todas las ligas</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="estado"><i class="fas fa-filter"></i> ESTADO</label>
+                <select id="estado">
+                    <option value="all">Todos los partidos</option>
+                    <option value="live">En vivo</option>
+                    <option value="finished">Finalizados</option>
+                    <option value="scheduled">Programados</option>
+                </select>
+            </div>
+            
+            <div class="btn-group">
+                <button class="btn btn-success" id="btn-hoy">
+                    <i class="fas fa-home"></i> HOY
+                </button>
+                <button class="btn btn-warning" id="btn-auto">
+                    <i class="fas fa-sync"></i> AUTO
+                </button>
+                <button class="btn" id="btn-actualizar">
+                    <i class="fas fa-redo"></i> ACTUALIZAR
+                </button>
+            </div>
+        </div>
+
+        <!-- ESTADÍSTICAS -->
+        <div class="stats">
+            <div class="stat-card total">
+                <div class="stat-label">TOTAL PARTIDOS</div>
+                <div class="stat-value" id="total-partidos">0</div>
+                <div class="stat-sub">Fecha seleccionada</div>
+            </div>
+            
+            <div class="stat-card live">
+                <div class="stat-label">EN VIVO AHORA</div>
+                <div class="stat-value" id="en-vivo">0</div>
+                <div class="stat-sub">Partidos activos</div>
+            </div>
+            
+            <div class="stat-card leagues">
+                <div class="stat-label">COMPETICIONES</div>
+                <div class="stat-value" id="total-ligas">0</div>
+                <div class="stat-sub">Disponibles</div>
+            </div>
+        </div>
+
+        <!-- MENSAJE DE ERROR -->
+        <div class="error-message" id="error-msg">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span id="error-text"></span>
+            <button class="btn" onclick="location.reload()">Reintentar</button>
+        </div>
+
+        <!-- LOADING -->
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Cargando partidos...</p>
+        </div>
+
+        <!-- CONTENEDOR DE PARTIDOS -->
+        <div class="matches-container" id="partidos-container">
+            <!-- Los partidos se cargarán aquí -->
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-content">
+                <div class="api-info">
+                    <p><strong>Web app Milei futbolero - versión beta</strong> - Datos en tiempo real</p>
+                    <div class="api-status">
+                        <i class="fas fa-circle status-online" id="api-status-icon"></i>
+                        <span id="api-status-text">Conectado</span>
+                    </div>
+                </div>
+                <div class="developer-info">
+                    <p>Desarrollado por Gastón Garello</p>
+                    <div class="contact-info">
+                        <p class="whatsapp-contact"><i class="fab fa-whatsapp"></i> WA: 3583486848</p>
+                        <p class="free-app"><i class="fas fa-gift"></i> App gratuita: solo debes seguir al canal</p>
+                        <a href="https://whatsapp.com/channel/0029VagfWy8AjPXFMgBQdp0n" target="_blank" class="whatsapp-link">
+                             https://whatsapp.com/channel/0029VagfWy8AjPXFMgBQdp0n
+                    </a>
+						<p><i class="fas fa-envelope"></i> gastongarello@gmail.com</p>
+                        <p><i class="fas fa-shield-alt"></i> API Key protegida</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // CONFIGURACIÓN - ¡REEMPLAZA ESTA API KEY!
+        const API_KEY = 'ba5d61f5e55f95a624f243f255589e55';
+        
+        const BASE_URL = 'https://v3.football.api-sports.io';
+        
+        // Ligas regionales sin cobertura
+        const LIGAS_SIN_COBERTURA = [
+            'Liga Regional de Fútbol de Rio Cuarto - Primera A', 
+            'Liga Regional de Fútbol de Rio Cuarto - Primera B'
+        ];
+        
+        // Estado de la aplicación
+        const estadoApp = {
+            fechaActual: new Date().toISOString().split('T')[0],
+            ligaSeleccionada: '',
+            estadoSeleccionado: 'all',
+            autoActualizar: false,
+            intervaloAuto: null,
+            partidos: [],
+            ligas: []
+        };
+
+        // Inicializar aplicación
+        document.addEventListener('DOMContentLoaded', function() {
+            configurarFecha();
+            configurarEventos();
+            verificarAPIKey();
+            cargarLigas();
+            cargarPartidos();
+            iniciarAutoActualizacion();
+        });
+
+        // Configurar fecha por defecto
+        function configurarFecha() {
+            const fechaInput = document.getElementById('fecha');
+            const hoy = new Date();
+            const manana = new Date(hoy);
+            manana.setDate(hoy.getDate() + 1);
+            
+            fechaInput.value = estadoApp.fechaActual;
+            fechaInput.min = '2023-01-01';
+            fechaInput.max = manana.toISOString().split('T')[0];
+        }
+
+        // Configurar eventos
+        function configurarEventos() {
+            // Cambio de fecha
+            document.getElementById('fecha').addEventListener('change', function(e) {
+                estadoApp.fechaActual = e.target.value;
+                cargarPartidos();
+            });
+
+            // Cambio de liga
+            document.getElementById('liga').addEventListener('change', function(e) {
+                estadoApp.ligaSeleccionada = e.target.value;
+                cargarPartidos();
+            });
+
+            // Cambio de estado
+            document.getElementById('estado').addEventListener('change', function(e) {
+                estadoApp.estadoSeleccionado = e.target.value;
+                filtrarPartidos();
+            });
+
+            // Botones
+            document.getElementById('btn-hoy').addEventListener('click', function() {
+                const hoy = new Date().toISOString().split('T')[0];
+                document.getElementById('fecha').value = hoy;
+                estadoApp.fechaActual = hoy;
+                cargarPartidos();
+            });
+
+            document.getElementById('btn-actualizar').addEventListener('click', cargarPartidos);
+
+            document.getElementById('btn-auto').addEventListener('click', function() {
+                estadoApp.autoActualizar = !estadoApp.autoActualizar;
+                const btn = document.getElementById('btn-auto');
+                
+                if (estadoApp.autoActualizar) {
+                    btn.innerHTML = '<i class="fas fa-stop"></i> DETENER';
+                    btn.classList.remove('btn-warning');
+                    btn.classList.add('btn-danger');
+                    mostrarMensaje('Auto-actualización activada cada 30 segundos', 'info');
+                } else {
+                    btn.innerHTML = '<i class="fas fa-sync"></i> AUTO';
+                    btn.classList.remove('btn-danger');
+                    btn.classList.add('btn-warning');
+                    mostrarMensaje('Auto-actualización desactivada', 'info');
+                }
+            });
+        }
+
+        // Verificar API Key
+        function verificarAPIKey() {
+            if (!API_KEY || API_KEY === 'TU_NUEVA_API_KEY_AQUÍ') {
+                mostrarError('⚠️ ERROR: Configura tu API Key en el código.<br>' +
+                           '1. Ve a: https://dashboard.api-football.com/profile<br>' +
+                           '2. Revoca tu clave anterior<br>' +
+                           '3. Genera una nueva clave<br>' +
+                           '4. Pégala en la línea 315 de este archivo');
+                return false;
+            }
+            return true;
+        }
+
+        // Cargar ligas
+        async function cargarLigas() {
+            if (!verificarAPIKey()) return;
+            
+            try {
+                const response = await fetch(`${BASE_URL}/leagues?current=true`, {
+                    headers: {
+                        'x-apisports-key': API_KEY
+                    }
+                });
+                
+                const data = await response.json();
+                
+                if (data.response) {
+                    estadoApp.ligas = data.response;
+                    actualizarSelectLigas();
+                }
+            } catch (error) {
+                console.error('Error cargando ligas:', error);
+            }
+        }
+
+        // Actualizar select de ligas
+        function actualizarSelectLigas() {
+            const select = document.getElementById('liga');
+            const ligasOrdenadas = [...estadoApp.ligas].sort((a, b) => 
+                a.league.name.localeCompare(b.league.name)
+            );
+
+            // Limpiar opciones (excepto la primera)
+            while (select.options.length > 1) {
+                select.remove(1);
+            }
+
+            // Agregar ligas de la API
+            ligasOrdenadas.forEach(liga => {
+                const option = document.createElement('option');
+                option.value = liga.league.id;
+                option.textContent = `${liga.league.name} - ${liga.country.name}`;
+                select.appendChild(option);
+            });
+
+            // Agregar ligas regionales sin cobertura (sin indicadores visuales especiales)
+            LIGAS_SIN_COBERTURA.forEach((liga, index) => {
+                const option = document.createElement('option');
+                option.value = `regional_${index}`;
+                option.textContent = liga;
+                select.appendChild(option);
+            });
+
+            document.getElementById('total-ligas').textContent = ligasOrdenadas.length + LIGAS_SIN_COBERTURA.length;
+        }
+
+        // Cargar partidos
+        async function cargarPartidos() {
+            if (!verificarAPIKey()) return;
+            
+            mostrarLoading(true);
+            ocultarError();
+            
+            try {
+                // Verificar si se seleccionó una liga regional sin cobertura
+                const ligaSelect = document.getElementById('liga');
+                const ligaSeleccionada = ligaSelect.options[ligaSelect.selectedIndex].textContent;
+                
+                if (LIGAS_SIN_COBERTURA.includes(ligaSeleccionada)) {
+                    // Para ligas sin cobertura, mostrar directamente el mensaje
+                    estadoApp.partidos = [];
+                    mostrarPartidos();
+                    actualizarEstadisticas();
+                    mostrarLoading(false);
+                    return;
+                }
+                
+                // Resto del código para ligas con cobertura
+                const btn = document.getElementById('btn-actualizar');
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> CARGANDO...';
+                btn.disabled = true;
+
+                const params = new URLSearchParams();
+                params.append('date', estadoApp.fechaActual);
+                
+                if (estadoApp.ligaSeleccionada && !estadoApp.ligaSeleccionada.startsWith('regional_')) {
+                    params.append('league', estadoApp.ligaSeleccionada);
+                }
+
+                const response = await fetch(`${BASE_URL}/fixtures?${params}`, {
+                    headers: {
+                        'x-apisports-key': API_KEY
+                    }
+                });
+
+                const data = await response.json();
+
+                if (data.response) {
+                    estadoApp.partidos = data.response;
+                    mostrarPartidos();
+                    actualizarEstadisticas();
+                    actualizarEstadoAPI(true);
+                    mostrarMensaje(`✅ ${estadoApp.partidos.length} partidos cargados`, 'success');
+                } else {
+                    mostrarError(data.errors?.message || 'No se encontraron partidos');
+                    estadoApp.partidos = [];
+                    mostrarPartidos();
+                }
+
+            } catch (error) {
+                console.error('Error cargando partidos:', error);
+                mostrarError('Error de conexión con la API');
+                actualizarEstadoAPI(false);
+            } finally {
+                mostrarLoading(false);
+                const btn = document.getElementById('btn-actualizar');
+                btn.innerHTML = '<i class="fas fa-redo"></i> ACTUALIZAR';
+                btn.disabled = false;
+            }
+        }
+
+        // Mostrar partidos
+        function mostrarPartidos() {
+            const container = document.getElementById('partidos-container');
+            
+            if (estadoApp.partidos.length === 0) {
+                container.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 60px;">
+                        <i class="fas fa-times-circle" style="font-size: 4rem; color: #6c757d;"></i>
+                        <h3 style="margin: 20px 0 10px; color: #495057;">¡LIBERTAD DE PARTIDOS!</h3>
+                        <p style="color: #6c757d;">No hay partidos programados para esta fecha</p>
+                        <button class="btn" onclick="cargarPartidos()" style="margin-top: 20px;">
+                            <i class="fas fa-redo"></i> Reintentar
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            // Ordenar: primero en vivo, luego por hora
+            const partidosOrdenados = [...estadoApp.partidos].sort((a, b) => {
+                if (a.fixture.status.short === 'LIVE' && b.fixture.status.short !== 'LIVE') return -1;
+                if (a.fixture.status.short !== 'LIVE' && b.fixture.status.short === 'LIVE') return 1;
+                return new Date(a.fixture.date) - new Date(b.fixture.date);
+            });
+
+            container.innerHTML = partidosOrdenados.map(partido => crearCardPartido(partido)).join('');
+            filtrarPartidos();
+        }
+
+        // Crear card de partido
+        function crearCardPartido(partido) {
+            const esEnVivo = partido.fixture.status.short === 'LIVE';
+            const esFinalizado = ['FT', 'AET', 'PEN'].includes(partido.fixture.status.short);
+            
+            const horaPartido = new Date(partido.fixture.date).toLocaleTimeString('es-AR', {
+                hour: '2-digit',
+                minute: '2-digit',
+                timeZone: 'America/Argentina/Buenos_Aires'
+            });
+
+            const claseEstado = esEnVivo ? 'status-live' : 
+                              esFinalizado ? 'status-finished' : 'status-scheduled';
+            
+            const textoEstado = esEnVivo ? 'EN VIVO' : 
+                              esFinalizado ? 'FINALIZADO' : 'PROGRAMADO';
+
+            return `
+                <div class="match-card ${esEnVivo ? 'live' : ''}" 
+                     data-status="${esEnVivo ? 'live' : esFinalizado ? 'finished' : 'scheduled'}"
+                     data-league="${partido.league.id}">
+                    
+                    <div class="match-header">
+                        <div class="league-info">
+                            ${partido.league.logo ? 
+                                `<img src="${partido.league.logo}" alt="${partido.league.name}" class="league-logo">` : 
+                                `<div class="league-logo">🏆</div>`
+                            }
+                            <div>
+                                <div class="league-name">${partido.league.name}</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">
+                                    <i class="far fa-clock"></i> ${horaPartido}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="match-status ${claseEstado}">${textoEstado}</div>
+                    </div>
+
+                    <div class="match-content">
+                        <div class="teams">
+                            <div class="team">
+                                <img src="${partido.teams.home.logo || 'https://via.placeholder.com/70x70?text=LOGO'}" 
+                                     alt="${partido.teams.home.name}" 
+                                     class="team-logo">
+                                <div class="team-name">${partido.teams.home.name}</div>
+                            </div>
+
+                            <div class="vs">VS</div>
+
+                            <div class="team">
+                                <img src="${partido.teams.away.logo || 'https://via.placeholder.com/70x70?text=LOGO'}" 
+                                     alt="${partido.teams.away.name}" 
+                                     class="team-logo">
+                                <div class="team-name">${partido.teams.away.name}</div>
+                            </div>
+                        </div>
+
+                        <div class="score">
+                            ${partido.goals.home !== null ? partido.goals.home : '0'} - 
+                            ${partido.goals.away !== null ? partido.goals.away : '0'}
+                        </div>
+
+                        <div class="match-details">
+                            <div>
+                                <i class="fas fa-map-marker-alt"></i>
+                                ${partido.fixture.venue?.name || 'Estadio'}
+                            </div>
+                            <div>
+                                <i class="fas fa-users"></i>
+                                ${partido.fixture.venue?.city || 'Ciudad'}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Filtrar partidos
+        function filtrarPartidos() {
+            const cards = document.querySelectorAll('.match-card');
+            let visibles = 0;
+            
+            cards.forEach(card => {
+                const status = card.getAttribute('data-status');
+                const league = card.getAttribute('data-league');
+                let mostrar = true;
+
+                // Filtrar por estado
+                if (estadoApp.estadoSeleccionado !== 'all' && status !== estadoApp.estadoSeleccionado) {
+                    mostrar = false;
+                }
+
+                // Filtrar por liga
+                if (estadoApp.ligaSeleccionada && league !== estadoApp.ligaSeleccionada) {
+                    mostrar = false;
+                }
+
+                card.style.display = mostrar ? 'block' : 'none';
+                if (mostrar) visibles++;
+            });
+
+            // Si no hay partidos visibles
+            if (visibles === 0 && estadoApp.partidos.length > 0) {
+                document.getElementById('partidos-container').innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+                        <i class="fas fa-filter" style="font-size: 3rem; color: #6c757d;"></i>
+                        <h3 style="margin: 20px 0 10px; color: #495057;">Sin resultados</h3>
+                        <p style="color: #6c757d;">No hay partidos con los filtros seleccionados</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Actualizar estadísticas
+        function actualizarEstadisticas() {
+            const total = estadoApp.partidos.length;
+            const enVivo = estadoApp.partidos.filter(p => 
+                p.fixture.status.short === 'LIVE'
+            ).length;
+
+            document.getElementById('total-partidos').textContent = total;
+            document.getElementById('en-vivo').textContent = enVivo;
+        }
+
+        // Actualizar estado API
+        function actualizarEstadoAPI(conectado) {
+            const icon = document.getElementById('api-status-icon');
+            const text = document.getElementById('api-status-text');
+            
+            if (conectado) {
+                icon.className = 'fas fa-circle status-online';
+                text.textContent = 'Conectado';
+            } else {
+                icon.className = 'fas fa-circle status-offline';
+                text.textContent = 'Desconectado';
+            }
+        }
+
+        // Auto actualización
+        function iniciarAutoActualizacion() {
+            setInterval(() => {
+                if (estadoApp.autoActualizar) {
+                    cargarPartidos();
+                }
+            }, 30000); // 30 segundos
+        }
+
+        // Mostrar loading
+        function mostrarLoading(mostrar) {
+            document.getElementById('loading').style.display = mostrar ? 'block' : 'none';
+            document.getElementById('partidos-container').style.opacity = mostrar ? '0.5' : '1';
+        }
+
+        // Mostrar error
+        function mostrarError(mensaje) {
+            document.getElementById('error-text').innerHTML = mensaje;
+            document.getElementById('error-msg').classList.add('show');
+        }
+
+        // Ocultar error
+        function ocultarError() {
+            document.getElementById('error-msg').classList.remove('show');
+        }
+
+        // Mostrar mensaje temporal
+        function mostrarMensaje(texto, tipo) {
+            // Crear notificación temporal
+            const notificacion = document.createElement('div');
+            notificacion.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 15px 25px;
+                border-radius: 10px;
+                color: white;
+                font-weight: 600;
+                z-index: 1000;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            if (tipo === 'error') {
+                notificacion.style.background = '#dc3545';
+            } else if (tipo === 'success') {
+                notificacion.style.background = '#198754';
+            } else {
+                notificacion.style.background = '#0d6efd';
+            }
+            
+            notificacion.innerHTML = texto;
+            document.body.appendChild(notificacion);
+            
+            // Remover después de 3 segundos
+            setTimeout(() => {
+                notificacion.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => notificacion.remove(), 300);
+            }, 3000);
+        }
+
+        // Agregar animaciones CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+            
+            .btn-danger {
+                background: #dc3545 !important;
+                color: white !important;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Exponer funciones globales
+        window.cargarPartidos = cargarPartidos;
+        window.mostrarError = mostrarError;
+    </script>
+</body>
+</html>
